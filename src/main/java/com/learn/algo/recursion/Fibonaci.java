@@ -2,6 +2,7 @@ package com.learn.algo.recursion;
 
 public class Fibonaci {
   
+	// tail  recursion
 	public int tailRecursiveFibonaciNumber( int n){
 		if(n == 0){
 			return 0;
@@ -12,9 +13,11 @@ public class Fibonaci {
 		return recurse(n,0,1);
 	}
 	
+	// normal recursion
 	public int recursiveFebonaciNumber(int n){
 		return recurse(n);
 	}
+	
 	private int recurse(int num, int prev,int curr ) {
 		if (num == 1)
 			return curr;

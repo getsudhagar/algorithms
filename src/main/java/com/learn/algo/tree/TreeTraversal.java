@@ -1,8 +1,8 @@
 package com.learn.algo.tree;
 
 import java.util.Stack;
-
 import com.learn.algo.common.TreeNode;
+
 /**
  *https://en.wikipedia.org/wiki/Tree_traversal
  */
@@ -51,7 +51,12 @@ public class TreeTraversal {
 		Stack<TreeNode> stk = new Stack<TreeNode>();
 		stk.push(node);
 		while(!stk.empty()){
-			
+			TreeNode nd =stk.pop();
+			System.out.println(node.value);
+			 if (nd.right != null)
+			      stk.push(node.right);
+			    if (nd.left != null)
+			      stk.push(node.left);
 		}
 	}
 
@@ -59,8 +64,8 @@ public class TreeTraversal {
 		if (node == null) {
 			return;
 		}
-		inorderTraversal(node.left);
-		inorderTraversal(node.right);
+		postorderTraversal(node.left);
+		postorderTraversal(node.right);
 		System.out.println(node.value);
 	}
 
